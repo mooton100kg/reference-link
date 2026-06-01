@@ -56,3 +56,20 @@
 
     margin-top: 12px;
 }
+
+/* style css */
+.reference-example-code {
+    background-color: var(--background-primary-alt);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+
+    padding: 12px 16px;
+    margin: 12px 0;
+
+    overflow-x: auto;
+}
+
+.reference-example-code code {
+    font-family: var(--font-monospace);
+    white-space: pre;
+}
