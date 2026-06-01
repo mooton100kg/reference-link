@@ -1,16 +1,9 @@
-/*
-
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
 .reference-container {
-    display: grid;
+    display: flex;
+    flex-wrap: nowrap;
 
-    grid-template-columns: repeat(auto-fill,
-            minmax(260px, 1fr));
+    overflow-x: auto;
+    overflow-y: hidden;
 
     gap: 16px;
 
@@ -18,23 +11,20 @@ If your plugin does not need CSS, delete this file.
 }
 
 .reference-card {
+    flex: 0 0 260px;
+
     background: var(--background-secondary);
-
     border: 1px solid var(--background-modifier-border);
-
     border-radius: 12px;
-
     padding: 14px;
-
     cursor: pointer;
-
     overflow: hidden;
 
     transition: transform 0.15s ease;
 }
 
-.reference-card:hover {
-    transform: translateY(-2px);
+.reference-container::-webkit-scrollbar {
+    height: 8px;
 }
 
 .reference-title {
@@ -53,12 +43,6 @@ If your plugin does not need CSS, delete this file.
     word-break: break-all;
 
     margin-bottom: 10px;
-}
-
-.reference-description {
-    font-size: 13px;
-
-    line-height: 1.5;
 }
 
 .reference-image {
