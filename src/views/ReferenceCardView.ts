@@ -1,5 +1,9 @@
 import {ReferenceModel} from 'models/ReferenceModel';
 
+interface Metadata {
+  image?: string;
+}
+
 export class ReferenceCardView {
   card: HTMLDivElement;
 
@@ -21,7 +25,7 @@ export class ReferenceCardView {
     });
   }
 
-  update(metadata: any) {
+  update(metadata: Metadata) {
     if (metadata.image) {
       const img = this.card.createEl('img');
       img.src = metadata.image;

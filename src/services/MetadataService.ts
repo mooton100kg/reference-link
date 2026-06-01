@@ -19,7 +19,7 @@ export class MetadataService {
       return {};
     }
   }
-  extractMeta(html: String, name: String, attr: String) {
+  extractMeta(html: string, name: string, attr: string) {
     const regex = new RegExp(
         `<meta\\s+${attr}=["']${name}["']\\s+content=["']([^"']*)["']`, 'i');
 
