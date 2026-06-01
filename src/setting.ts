@@ -15,23 +15,17 @@ export class ReferenceSettingTab extends PluginSettingTab {
 
     containerEl.empty();
 
-    // Introduction
-    new Setting(containerEl)
-        .setName('Reference Link')
-        .setHeading()
-        .setDesc('A plugin to create reference cards from URLs.');
-
     // Usage instructions
-    new Setting(containerEl).setName('Usage').setHeading();
+    new Setting(containerEl).setName('How to use').setHeading();
 
     const pre = containerEl.createEl('pre', {cls: 'reference-example-code'});
 
     const code = pre.createEl('code');
 
-    code.setText(`​\`\`\`reference
-OpenAI : https://openai.com
-Google : https://google.com
-\`\`\``);
+    code.setText([
+      '```reference', 'OpenAI : https://openai.com',
+      'Google : https://google.com', '```'
+    ].join('\n'));
 
     const preview = containerEl.createDiv({cls: 'reference-container'});
 
@@ -51,13 +45,13 @@ Google : https://google.com
     });
 
     // Quick insert instructions
-    new Setting(containerEl).setName('Commands').setHeading();
+    new Setting(containerEl).setName('Available commands').setHeading();
 
     const commandList = containerEl.createEl('ul');
 
     commandList.createEl('li', {
       text:
-          '/Reference - Insert a reference block template at the cursor position.'
+          '/reference - insert a reference block template at the cursor position.'
     });
   }
 }
